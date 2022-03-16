@@ -4,11 +4,24 @@ import numpy as np
 class Plot():
     def plot_bar(self, simple_method_quantity, thread_quantity):
         print(thread_quantity)
-        legend = ['sem thread', 'Thread']
+        legend = ['sem thread', '20 Threads']
         pos = np.arange(len(legend))
         print('pos' + str(pos))
         plt.ylabel('Media de tempo')
-        plt.title('Quantidade de números primos encontrados')
+        plt.title('metodo X tempo')
+        plt.bar(0, simple_method_quantity, color='yellow', edgecolor='black')
+        plt.bar(1, thread_quantity, color='blue', edgecolor='black')
+        plt.xticks(pos, legend)
+        plt.legend(legend, loc=2)
+        plt.show()
+
+    def plot_bar_aks(self, simple_method_quantity, thread_quantity):
+        print(thread_quantity)
+        legend = ['sympy', 'aks']
+        pos = np.arange(len(legend))
+        print('pos' + str(pos))
+        plt.ylabel('Media de tempo')
+        plt.title('metodo X tempo')
         plt.bar(0, simple_method_quantity, color='yellow', edgecolor='black')
         plt.bar(1, thread_quantity, color='blue', edgecolor='black')
         plt.xticks(pos, legend)
